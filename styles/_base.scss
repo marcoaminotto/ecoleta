@@ -1,0 +1,27 @@
+$title-color: #322153;
+$primary-color: #34cb79;
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: Roboto, sans-serif;
+}
+
+body {
+  background: #e7e7ec;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: $title-color;
+  font-family: Ubuntu, sans-serif;
+  font-weight: 700;
+}
+
