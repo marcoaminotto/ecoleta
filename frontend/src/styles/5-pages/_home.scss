@@ -13,4 +13,8 @@
     display: flex;
     flex-direction: column;
   }
+
+  header span {
+    background-image: url('../assets/log-in.svg');
+  }
 }
