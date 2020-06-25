@@ -1,0 +1,72 @@
+form {
+  background-color: white;
+  max-width: 730px;
+  margin: 80px auto;
+  padding: 64px;
+  border-radius: 8px;
+
+  h1 {
+    font-size: 36px;
+  }
+
+  fieldset {
+    margin-top: 64px;
+    border: 0;
+  }
+
+  legend {
+    margin-bottom: 40px;
+
+    h2 {
+      font-size: 24px;
+    }
+  }
+
+  input, select {
+    background-color: $background-color;
+    padding: 16px 24px;
+    border: 0;
+    border-radius: 8px;
+    outline: none;
+    font-size: 16px;
+  }
+
+  label {
+    margin-bottom: 8px;
+    font-size: 15px;
+  }
+
+  button { 
+    background-color: $primary-color;
+    width: 260px;
+    height: 56px;
+    margin-top: 40px;
+    border: 0;
+    border-radius: 8px;
+    transition: background-color 400ms;
+
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+
+    &:hover {
+      background-color: $primary-color-strong;
+    }
+
+  }
+
+  .field {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 24px;
+  }
+
+  .field-group {
+    display: flex;
+    
+    .field + .field {
+      margin-left: 24px;
+    }
+  }
+}

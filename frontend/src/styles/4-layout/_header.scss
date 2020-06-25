@@ -6,12 +6,12 @@ header {
 
   a {
     display: flex;
+    align-items: center;
     color: $title-color;
     font-weight: 700;
 
     span {
       display: flex;
-      background-image: url('../assets/log-in.svg');
       margin-right: 16px;
       height: 20px;
       width: 20px;
