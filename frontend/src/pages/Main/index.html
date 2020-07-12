@@ -27,5 +27,41 @@
       </main>
     </div>
   </div>
+
+  <div id="modal" class="hide">
+    <div class="content">
+      <div class="header">
+        <h1>Collect Point</h1>
+        <a href="#">Close</a>
+      </div>
+      <form id="modal-form">
+        <div class="fields-group">
+          <div class="field">
+            <label for="country">Country</label>
+            <select name="country" >
+              <option value="">Select a country</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="region">Region</label>
+            <select name="region" >
+              <option value="">Select a region</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="city">City</label>
+            <select name="city" >
+              <option value="">Select a city</option>
+            </select>
+          </div>
+          <button>
+            <img src="../../assets/search.svg" alt="Search">
+            <strong>Search</strong>
+          </button>
+        </div>
+      </form>
+    </div> 
+  </div>
+  <script src="./script.js"></script>
 </body>
 </html>
