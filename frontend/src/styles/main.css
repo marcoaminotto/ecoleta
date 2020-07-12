@@ -34,6 +34,63 @@ a {
   text-decoration: none;
 }
 
+#modal {
+  background-color: #0E0A14da;
+  position: fixed;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  -webkit-transition: 400ms;
+  transition: 400ms;
+}
+
+#modal .content {
+  color: white;
+  width: 420px;
+}
+
+#modal .header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 48px;
+}
+
+#modal .header a {
+  background-image: url("../assets/x.svg");
+  width: 20px;
+  height: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 0.01px;
+}
+
+#modal .header h1 {
+  color: white;
+  font-size: 36px;
+  line-height: 42px;
+}
+
+#modal.hide {
+  display: none;
+}
+
 header {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -148,7 +205,7 @@ main a strong {
   text-align: center;
 }
 
-form {
+#register-form {
   background-color: white;
   max-width: 730px;
   margin: 80px auto;
@@ -156,24 +213,24 @@ form {
   border-radius: 8px;
 }
 
-form h1 {
+#register-form h1 {
   font-size: 36px;
 }
 
-form fieldset {
+#register-form fieldset {
   margin-top: 64px;
   border: 0;
 }
 
-form legend {
+#register-form legend {
   margin-bottom: 40px;
 }
 
-form legend h2 {
+#register-form legend h2 {
   font-size: 24px;
 }
 
-form input, form select {
+#register-form input, #register-form select {
   background-color: #e7e7ec;
   padding: 16px 24px;
   border: 0;
@@ -182,12 +239,12 @@ form input, form select {
   font-size: 16px;
 }
 
-form label {
+#register-form label {
   margin-bottom: 8px;
   font-size: 15px;
 }
 
-form button {
+#register-form button {
   background-color: #34cb79;
   width: 260px;
   height: 56px;
@@ -201,11 +258,11 @@ form button {
   font-size: 16px;
 }
 
-form button:hover {
+#register-form button:hover {
   background-color: #2fb86e;
 }
 
-form .field {
+#register-form .field {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
@@ -219,30 +276,76 @@ form .field {
   margin-bottom: 24px;
 }
 
-form .field-group {
+#register-form .field-group {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-form .field-group .field + .field {
+#register-form .field-group .field + .field {
   margin-left: 24px;
 }
 
-.items-grid {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr 1fr 1fr;
-      grid-template-columns: 1fr 1fr 1fr;
-  gap: 16px;
+#modal-form label {
+  font-size: 16px;
+  line-height: 16px;
+  display: block;
+  margin-bottom: 11px;
 }
 
-.items-grid li {
+#modal-form select {
   background-color: #e7e7ec;
-  border: 2px solid #e7e7ec;
   border-radius: 8px;
-  height: 180px;
-  padding: 32px 24px 16px;
+  border: 0;
+  padding: 16px 24px;
+  font-size: 16px;
+  color: #6c6c80;
+}
+
+#modal-form button {
+  background-color: #34cb79;
+  padding: 16px 24px;
+  border-radius: 8px;
+  border: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 20px;
+  -webkit-transition: 400ms;
+  transition: 400ms;
+  font-size: 16px;
+  color: white;
+}
+
+#modal-form button:hover {
+  -webkit-filter: brightness(0.7);
+          filter: brightness(0.7);
+}
+
+#modal-form button strong {
+  margin-left: 5px;
+}
+
+#modal-form .fields-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#modal-form .field {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -250,39 +353,7 @@ form .field-group .field + .field {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  text-align: center;
-  cursor: pointer;
-}
-
-.items-grid li span {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  margin-top: 12px;
-  color: #322153;
-}
-
-.items-grid li img, .items-grid li span {
-  pointer-events: none;
-}
-
-.items-grid li.selected {
-  background-color: #e1faec;
-  border: 2px solid #34cb79;
-  -webkit-transition: background-color 400ms;
-  transition: background-color 400ms;
+  margin-bottom: 20px;
 }
 
 #page-home {
