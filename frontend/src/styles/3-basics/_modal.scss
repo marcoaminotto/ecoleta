@@ -1,0 +1,41 @@
+#modal {
+  background-color: #0E0A14da;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  transition: 400ms;
+
+  .content {
+    color: white;
+    width: 420px;
+  }
+
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 48px;
+
+    a {
+      background-image: url("../assets/x.svg");
+      width: 20px;
+      height: 20px;
+      display: flex;
+      font-size: 0.01px;
+    }
+
+    h1 {
+      color: white;
+      font-size: 36px;
+      line-height: 42px;
+    }
+  }
+
+  &.hide {
+    display: none;
+  }
+}
