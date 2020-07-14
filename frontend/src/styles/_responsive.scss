@@ -19,6 +19,20 @@
       align-items: center;
     }
   }
+
+  #page-search-points {
+    .cards {
+      grid-template-columns: 1fr 1fr !important;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  #page-search-points {
+    .cards {
+      grid-template-columns: 1fr !important;
+    }
+  }
 }
 
 @media (min-width: 1700px) {
@@ -32,3 +46,4 @@
     background-position-y: 200px;
   }
 }
+
