@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% set pageId = "page-search-points" %}
+
+{% block title %}
+  <title>Results</title>
+{% endblock title %}
+
+{% block content %}
+  {% include "partials/page-header.html" %}
+
+  <main>
+    <h4>
+      <strong>2 points</strong>
+      found
+    </h4>
+    <div class="cards">
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1528323273322-d81458248d40?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="Colectoria">
+        <h1>Colectoria</h1>
+        <h3>Eletronics, Lamps</h3>
+        <p>
+          Malbork, Pomorskie, Poland<br>
+          Street blablabla<br>
+          Number 12
+        </p>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1516992654410-9309d4587e94?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="Papersider">
+        <h1>Papersider</h1>
+        <h3>Papers and Cardboards</h3>
+        <p>
+          Malbork, Pomorskie, Poland<br>
+          Street blablabla<br>
+          Number 12
+        </p>
+      </div>
+    </div>
+  </main>
+{% endblock content %}
+
+{% block script %}
+  <script type="application/javascript" src="../scripts/create-point.js"></script>
+{% endblock script %}

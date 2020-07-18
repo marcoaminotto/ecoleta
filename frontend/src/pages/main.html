@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% set pageId = "page-home" %}
+
+{% block content %}
+  <div class="content">
+    <header>
+      <img src="../assets/logo.svg" alt="Logo">
+      <a href="/create-point">
+        <span></span>
+        Register a collection point
+      </a>
+    </header>
+    <main>
+      <h1>Your marketplace of waste colletion</h1>
+      <p>
+        We help people to find collection points in an efficient way.
+        <!--We help people find collection points efficiently.-->
+      </p>
+      <a href="#">
+        <span></span>
+        <strong>Search for colletion points</strong>
+      </a>
+    </main>
+  </div>
+{% endblock content %}
+
+{% block modal %}
+  {% include "partials/modal.html" %}
+{% endblock modal %}
+
+{% block script %}
+  <script src="../scripts/main.js"></script>
+{% endblock script %}
