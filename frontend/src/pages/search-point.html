@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% set pageId = "page-search-points" %}
+
+{% block title %}
+  <title>Results</title>
+{% endblock title %}
+
+{% block content %}
+  {% include "partials/page-header.html" %}
+
+  <main>
+    {% if total > 0 %}
+      <h4>
+        <strong>{{ total }}
+          points</strong>
+        found
+      </h4>
+      <div class="cards">
+
+        {% for place in places %}
+          <div class="card">
+            <img src="{{ place.image }}" alt="{{ place.name }}">
+            <h1>{{ place.name }}</h1>
+            <h3>{{ place.items }}</h3>
+            <p>
+              {{ place.city }},
+              {{ place.region }},
+              {{ place.country }}<br>
+              {{ place.address }}<br>
+              Number 12
+            </p>
+          </div>
+        {% endfor %}
+      </div>
+
+    {% else %}
+      <h4><strong>No</strong> places found</h4>
+    {% endif %}
+  </main>
+{% endblock content %}
+
+{% block script %}
+  <script type="application/javascript" src="../scripts/create-point.js"></script>
+{% endblock script %}
