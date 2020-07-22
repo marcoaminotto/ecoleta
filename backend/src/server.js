@@ -1,5 +1,6 @@
 const express = require("express");
 const nunjucks = require("nunjucks");
+const db = require("./database/db");
 const server = express();
 
 const frontendPath = "/Users/marcoechevestre/Documents/ecoletas/frontend/src";
@@ -21,7 +22,16 @@ server.get("/create-point", (req, res) => {
 });
 
 server.get("/search", (req, res) => {
-  return res.render("search-point.html");
+
+  db.all(`SELECT * FROM places`, function (err, rows) {
+    if (err) {
+      return console.log(err);
+    }
+
+    const total = rows.length;
+
+    return res.render("search-point.html", { places: rows, total });
+  });
 });
 
 server.listen(3100);
