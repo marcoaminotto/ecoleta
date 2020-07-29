@@ -15,34 +15,40 @@ countrySelect.addEventListener("change", (event) => {
   regionSelect.disabled = true;
   citySelect.disabled = true;
 
-  fetch(`/create-point/${event.target.value}`, { method: "get" }).then(
-    (response) => {
-      response.json().then((regions) => {
-        for (const data of regions) {
-          regionSelect.innerHTML += `<option value="${data.region}">${data.region}</option>`;
-        }
-      });
-      regionSelect.disabled = false;
-    }
-  );
+  if (event.target.value) {
+    fetch(`/create-point/${event.target.value}`, { method: "get" }).then(
+      (response) => {
+        response.json().then((regions) => {
+          for (const data of regions) {
+            regionSelect.innerHTML += `<option value="${data.region}">${data.region}</option>`;
+          }
+        });
+        regionSelect.disabled = false;
+      }
+    );
+  }
 });
 
 regionSelect.addEventListener("change", (event) => {
   citySelect.innerHTML = '<option value="">Select a city</option>';
   citySelect.disabled = true;
 
-  const countrySelected = document.querySelector("select[name=country] > .selected").value;
+  const countrySelected = document.querySelector(
+    "select[name=country] > .selected"
+  ).value;
 
-  fetch(`/create-point/${countrySelected}/${event.target.value}`, { method: "get" }).then(
-    (response) => {
+  if (countrySelected && event.target.value) {
+    fetch(`/create-point/${countrySelected}/${event.target.value}`, {
+      method: "get",
+    }).then((response) => {
       response.json().then((cities) => {
         for (const data of cities) {
           citySelect.innerHTML += `<option value="${data.city}">${data.city}</option>`;
         }
       });
       citySelect.disabled = false;
-    }
-  );
+    });
+  }
 });
 
 for (const option of countryOptions) {
