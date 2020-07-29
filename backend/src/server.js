@@ -17,7 +17,11 @@ nunjucks.configure(frontendPath + "/pages", {
 server.use(express.static(frontendPath));
 
 server.get("/", (req, res) => {
-  return res.render("main.html");
+  const countries = apiBattuta.getCountries();
+  countries.then((countries) => {
+    //const totalContries = countries.length;
+    return res.render("main.html", { countries });
+  });
 });
 
 server.get("/create-point", (req, res) => {
