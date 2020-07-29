@@ -32,14 +32,16 @@
           <label for="country">Country</label>
           <select name="country">
             <option value="">Select a country</option>
+            {% for country in countries %}
+              <option value="{{country.code}}">{{country.name}}</option>
+            {% endfor %}
           </select>
         </div>
       </div>
       <div class="field-group">
         <div class="field">
-          <label for="state">State</label>
-          <select name="state" disabled="disabled">
-            <option value="">Select a state</option>
+          <label for="region">Region</label>
+          <select name="region" disabled="disabled">
           </select>
         </div>
         <div class="field">

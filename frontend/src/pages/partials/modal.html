@@ -10,6 +10,9 @@
           <label for="country">Country</label>
           <select name="country" >
             <option value="">Select a country</option>
+            {% for country in countries %}
+              <option value="{{country.code}}">{{country.name}}</option>
+            {% endfor %}
           </select>
         </div>
         <div class="field">
