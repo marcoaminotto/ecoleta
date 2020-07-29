@@ -19,7 +19,6 @@ server.use(express.static(frontendPath));
 server.get("/", (req, res) => {
   const countries = apiBattuta.getCountries();
   countries.then((countries) => {
-    //const totalContries = countries.length;
     return res.render("main.html", { countries });
   });
 });
@@ -27,7 +26,6 @@ server.get("/", (req, res) => {
 server.get("/create-point", (req, res) => {
   const countries = apiBattuta.getCountries();
   countries.then((countries) => {
-    //const totalContries = countries.length;
     return res.render("create-point.html", { countries });
   });
 });
