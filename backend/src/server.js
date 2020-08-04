@@ -56,9 +56,7 @@ server.get("/search", (req, res) => {
     const total = rows.length;
     return res.render("search-point.html", {
       places: rows,
-      total,
-      latitude: req.query.latitude,
-      longitude: req.query.longitude,
+      total
     });
   });
 });
