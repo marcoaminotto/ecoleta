@@ -30,14 +30,14 @@ server.get("/create-point", (req, res) => {
   });
 });
 
-server.get("/create-point/:countryCode", (req, res) => {
+server.get("/location/:countryCode", (req, res) => {
   const regions = apiBattuta.getRegions(req.params.countryCode);
   regions.then((regions) => {
     res.json(regions);
   });
 });
 
-server.get("/create-point/:countryCode/:region", (req, res) => {
+server.get("/location/:countryCode/:region", (req, res) => {
   const cities = apiBattuta.getCities(
     req.params.countryCode,
     req.params.region
@@ -54,7 +54,12 @@ server.get("/search", (req, res) => {
     }
 
     const total = rows.length;
-    return res.render("search-point.html", { places: rows, total });
+    return res.render("search-point.html", {
+      places: rows,
+      total,
+      latitude: req.query.latitude,
+      longitude: req.query.longitude,
+    });
   });
 });
 
