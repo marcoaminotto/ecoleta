@@ -11,6 +11,7 @@
 
   <main>
     {% if total > 0 %}
+      <div id="map"></div>
       <h4>
         <strong>{{ total }}
           points</strong>
@@ -35,11 +36,16 @@
       </div>
 
     {% else %}
-      <h4><strong>No</strong> places found</h4>
+      <h4>
+        <strong>No</strong>
+        places found</h4>
     {% endif %}
   </main>
 {% endblock content %}
 
 {% block script %}
-  <script type="application/javascript" src="../scripts/create-point.js"></script>
+  <script type="application/javascript" src="../scripts/search-point.js"></script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+  <script src="https://unpkg.com/@google/markerclustererplus@4.0.1/dist/markerclustererplus.min.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=KEY&callback=initMap&libraries=&v=weekly" defer="defer"></script>
 {% endblock script %}

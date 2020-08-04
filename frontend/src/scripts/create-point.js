@@ -16,7 +16,7 @@ countrySelect.addEventListener("change", (event) => {
   citySelect.disabled = true;
 
   if (event.target.value) {
-    fetch(`/create-point/${event.target.value}`, { method: "get" }).then(
+    fetch(`/location/${event.target.value}`, { method: "get" }).then(
       (response) => {
         response.json().then((regions) => {
           for (const data of regions) {
@@ -38,7 +38,7 @@ regionSelect.addEventListener("change", (event) => {
   ).value;
 
   if (countrySelected && event.target.value) {
-    fetch(`/create-point/${countrySelected}/${event.target.value}`, {
+    fetch(`/location/${countrySelected}/${event.target.value}`, {
       method: "get",
     }).then((response) => {
       response.json().then((cities) => {
