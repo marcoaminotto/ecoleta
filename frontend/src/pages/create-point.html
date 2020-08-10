@@ -41,8 +41,7 @@
       <div class="field-group">
         <div class="field">
           <label for="region">Region</label>
-          <select name="region" disabled="disabled">
-          </select>
+          <select name="region" disabled="disabled"></select>
         </div>
         <div class="field">
           <label for="city">City</label>
@@ -51,6 +50,9 @@
           </select>
         </div>
       </div>
+      <div id="map"></div>
+      <input type="hidden" name="latitude" value=""/>
+      <input type="hidden" name="longitude" value=""/>
     </fieldset>
     <fieldset>
       <legend>
@@ -90,4 +92,6 @@
 
 {% block script %}
   <script type="application/javascript" src="../scripts/create-point.js"></script>
+  <script src="https://unpkg.com/@google/markerclustererplus@4.0.1/dist/markerclustererplus.min.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=KEY&callback=initMap&libraries=&v=weekly" defer="defer"></script>
 {% endblock script %}
