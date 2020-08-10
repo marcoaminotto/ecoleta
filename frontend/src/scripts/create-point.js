@@ -56,7 +56,6 @@ regionSelect.addEventListener("change", (event) => {
             latitude: data.latitude,
             longitude: data.longitude,
           });
-          console.log(citiesCoordinates);
           citySelect.innerHTML += `<option value="${data.city}">${data.city}</option>`;
         }
       });
@@ -115,7 +114,6 @@ function handleSelectedItem(event) {
 function initMap() {
   let longitude = cityLongitude.value ? parseFloat(cityLongitude.value) : null;
   let latitude = cityLatitude.value ? parseFloat(cityLatitude.value) : null;
-  console.log(longitude, latitude);
   map = new google.maps.Map(document.getElementById("map"), {
     center: { lat: latitude || -28.024, lng: longitude || 140.887 },
     zoom: 12,
@@ -136,7 +134,6 @@ function addMarker(location, map) {
     map: map,
   });
   marker = coordenates;
-  console.log(marker);
 }
 
 function deleteMarkers() {
