@@ -13,11 +13,7 @@ const mapScreen = document.querySelector("#map");
 let selectedItems = [];
 let citiesCoordinates = [];
 let map;
-
-var locations = [
-  // here come a list of coordinates
-  // {lat: -31.563910, lng: 147.154312},
-];
+let marker;
 
 countrySelect.addEventListener("change", (event) => {
   hideMap();
@@ -125,20 +121,27 @@ function initMap() {
     zoom: 12,
   });
 
-  var labels = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-
-  var markers = locations.map(function (location, i) {
-    return new google.maps.Marker({
-      position: location,
-      label: labels[i % labels.length],
-    });
+  map.addListener("click", (event) => {
+    cityLongitude.value = event.latLng.lng();
+    cityLatitude.value = event.latLng.lat();
+    addMarker(event.latLng, map);
   });
+}
 
-  // Add a marker clusterer to manage the markers.
-  var markerCluster = new MarkerClusterer(map, markers, {
-    imagePath:
-      "https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m",
+function addMarker(location, map) {
+  marker ? deleteMarkers() : null;
+
+  const coordenates = new google.maps.Marker({
+    position: location,
+    map: map,
   });
+  marker = coordenates;
+  console.log(marker);
+}
+
+function deleteMarkers() {
+  marker.setMap(null);
+  marker = "";
 }
 
 function hideMap() {
