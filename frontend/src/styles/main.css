@@ -569,12 +569,53 @@ main a strong {
     -ms-grid-columns: 1fr 1fr !important;
         grid-template-columns: 1fr 1fr !important;
   }
+  #page-create-point .field-group {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  #page-create-point .field-group input,
+  #page-create-point .field-group select {
+    width: 100%;
+  }
+  #page-create-point .field-group .field + .field {
+    margin-left: 0;
+  }
 }
 
 @media (max-width: 600px) {
   #page-search-points .cards {
     -ms-grid-columns: 1fr !important;
         grid-template-columns: 1fr !important;
+  }
+  #page-create-point .items-grid {
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 460px) {
+  #page-create-point .items-grid {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+  #page-create-point legend {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  #page-create-point button {
+    font-size: 14px;
+    width: 100%;
+  }
+  #page-home main h1 {
+    font-size: 41px;
+    margin-top: -40px;
+  }
+  #page-home main p {
+    font-size: 22px;
   }
 }
 

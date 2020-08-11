@@ -1,4 +1,4 @@
-@media(max-width: 900px) {
+@media (max-width: 900px) {
   #page-home {
     background-position: 70vw;
 
@@ -7,7 +7,7 @@
       text-align: center;
     }
 
-    header a{
+    header a {
       position: absolute;
       bottom: 48px;
 
@@ -25,12 +25,63 @@
       grid-template-columns: 1fr 1fr !important;
     }
   }
+
+  #page-create-point {
+    .field-group {
+      flex-direction: column;
+
+      input,
+      select {
+        width: 100%;
+      }
+
+      .field + .field {
+        margin-left: 0;
+      }
+    }
+  }
 }
 
 @media (max-width: 600px) {
   #page-search-points {
     .cards {
       grid-template-columns: 1fr !important;
+    }
+  }
+
+  #page-create-point {
+    .items-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+}
+
+@media (max-width: 460px) {
+  #page-create-point {
+    .items-grid {
+      grid-template-columns: 1fr;
+    }
+
+    legend {
+      flex-direction: column;
+    }
+
+    button {
+      font-size: 14px;
+      width: 100%;
+    }
+  }
+
+  #page-home {
+    main {
+      h1 {
+        font-size: 41px;
+        margin-top: -40px;
+      }
+
+      p {
+        font-size: 22px;
+      }
     }
   }
 }
@@ -46,4 +97,3 @@
     background-position-y: 200px;
   }
 }
-
