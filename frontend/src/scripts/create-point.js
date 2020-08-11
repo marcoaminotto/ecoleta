@@ -39,7 +39,6 @@ regionSelect.addEventListener("change", (event) => {
   citySelect.disabled = true;
 
   const countrySelected = document.querySelector("select[name=country]").value;
-  console.log(event.target.value);
   if (countrySelected && event.target.value) {
     fetch(`/location/${countrySelected}/${event.target.value}`, {
       method: "get",

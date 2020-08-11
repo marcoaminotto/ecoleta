@@ -16,9 +16,17 @@
 
   legend {
     margin-bottom: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
 
     h2 {
       font-size: 24px;
+    }
+
+    span {
+      color: $title-color;
     }
   }
 
