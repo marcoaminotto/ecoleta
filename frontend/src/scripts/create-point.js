@@ -1,9 +1,6 @@
 const itemsToCollect = document.querySelectorAll(".items-grid li");
 const collectedItems = document.querySelector("input[name=items]");
 const countrySelect = document.querySelector("select[name=country]");
-const countryOptions = document.querySelectorAll(
-  "select[name=country] > option"
-);
 const regionSelect = document.querySelector("select[name=region]");
 const citySelect = document.querySelector("select[name=city]");
 const cityLongitude = document.querySelector("input[name=longitude]");
@@ -41,10 +38,7 @@ regionSelect.addEventListener("change", (event) => {
   citySelect.innerHTML = '<option value="">Select a city</option>';
   citySelect.disabled = true;
 
-  const countrySelected = document.querySelector(
-    "select[name=country] > .selected"
-  ).value;
-
+  const countrySelected = document.querySelector("select[name=country]").value;
   if (countrySelected && event.target.value) {
     fetch(`/location/${countrySelected}/${event.target.value}`, {
       method: "get",
@@ -77,17 +71,6 @@ citySelect.addEventListener("change", (event) => {
     hideMap();
   }
 });
-
-for (const option of countryOptions) {
-  option.addEventListener("click", function (event) {
-    const selectedOption = document.querySelector(
-      "select[name=country] .selected"
-    );
-    selectedOption ? selectedOption.classList.remove("selected") : null;
-    const option = event.target;
-    option.classList.add("selected");
-  });
-}
 
 for (const item of itemsToCollect) {
   item.addEventListener("click", handleSelectedItem);

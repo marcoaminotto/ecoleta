@@ -15,9 +15,15 @@
       <legend>
         <h2>Collection point data</h2>
       </legend>
-      <div class="field">
-        <label for="name">Entity name</label>
-        <input type="text" name="name">
+      <div class="field-group">
+        <div class="field">
+          <label for="name">Entity name</label>
+          <input type="text" name="name">
+        </div>
+        <div class="field">
+          <label for="image">Entity image</label>
+          <input type="url" name="image" placeholder="http://" required="required">
+        </div>
       </div>
       <div class="field">
         <label for="address">Address</label>
@@ -57,6 +63,7 @@
     <fieldset>
       <legend>
         <h2>Collection items</h2>
+        <span>Select one or more items</span>
       </legend>
       <div class="items-grid">
         <li data-id="1">

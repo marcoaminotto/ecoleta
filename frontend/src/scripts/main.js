@@ -4,24 +4,10 @@ const close = document.querySelector("#modal .header a");
 const countrySelect = document.querySelector("select[name=country]");
 const regionSelect = document.querySelector("select[name=region]");
 const citySelect = document.querySelector("select[name=city]");
-const countryOptions = document.querySelectorAll(
-  "select[name=country] > option"
-);
 const cityLongitude = document.querySelector("input[name=longitude]");
 const cityLatitude = document.querySelector("input[name=latitude]");
 
 let citiesCoordinates = [];
-
-for (const option of countryOptions) {
-  option.addEventListener("click", function (event) {
-    const selectedOption = document.querySelector(
-      "select[name=country] .selected"
-    );
-    selectedOption ? selectedOption.classList.remove("selected") : null;
-    const option = event.target;
-    option.classList.add("selected");
-  });
-}
 
 buttonSearch.addEventListener("click", () => {
   modal.classList.remove("hide");
@@ -56,7 +42,7 @@ regionSelect.addEventListener("change", (event) => {
   citySelect.disabled = true;
 
   const countrySelected = document.querySelector(
-    "select[name=country] > .selected"
+    "select[name=country]"
   ).value;
 
   if (countrySelected && event.target.value) {

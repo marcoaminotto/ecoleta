@@ -290,10 +290,24 @@ main a strong {
 
 #register-form legend {
   margin-bottom: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
 }
 
 #register-form legend h2 {
   font-size: 24px;
+}
+
+#register-form legend span {
+  color: #322153;
 }
 
 #register-form input, #register-form select {
