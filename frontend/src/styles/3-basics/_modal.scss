@@ -38,4 +38,23 @@
   &.hide {
     display: none;
   }
+
+  &.info {
+    .content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      h1 {
+        color: white;
+        margin-top: 32px;
+      }
+
+      #failIcon {
+        height: 57px;
+        background: red;
+        border-radius: 8px;
+      }
+    }
+  }
 }

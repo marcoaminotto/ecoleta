@@ -20,7 +20,8 @@ countrySelect.addEventListener("change", (event) => {
   citySelect.disabled = true;
 
   if (event.target.value) {
-    fetch(`/location/${event.target.value}`, { method: "get" }).then(
+    let countryCode = event.target.value.split(" - ")[1];
+    fetch(`/location/${countryCode}`, { method: "get" }).then(
       (response) => {
         response.json().then((regions) => {
           for (const data of regions) {
@@ -38,7 +39,7 @@ regionSelect.addEventListener("change", (event) => {
   citySelect.innerHTML = '<option value="">Select a city</option>';
   citySelect.disabled = true;
 
-  const countrySelected = document.querySelector("select[name=country]").value;
+  const countrySelected = document.querySelector("select[name=country]").value.split(" - ")[1];
   if (countrySelected && event.target.value) {
     fetch(`/location/${countrySelected}/${event.target.value}`, {
       method: "get",
