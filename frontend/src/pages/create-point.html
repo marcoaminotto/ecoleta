@@ -97,6 +97,14 @@
   </form>
 {% endblock content %}
 
+{% block modal %}
+  {% if saved %}
+    {% include "partials/modal-goodinfo.html" %}
+  {% elseif saved == false %}
+    {% include "partials/modal-badinfo.html" %}
+  {% endif %}
+{% endblock modal %}
+
 {% block script %}
   <script type="application/javascript" src="../scripts/create-point.js"></script>
   <script src="https://unpkg.com/@google/markerclustererplus@4.0.1/dist/markerclustererplus.min.js"></script>

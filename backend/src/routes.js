@@ -52,7 +52,8 @@ router.post("/save-point", (req, res) => {
 
   function afterInsertData(err) {
     if (err) {
-      return console.log(err);
+      console.log(err);
+      return res.render("create-point.html", { saved: false });
     }
     console.log("Successfully created!");
     console.log(this);

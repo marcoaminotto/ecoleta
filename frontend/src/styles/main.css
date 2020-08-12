@@ -101,6 +101,30 @@ a {
   display: none;
 }
 
+#modal.info .content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#modal.info .content h1 {
+  color: white;
+  margin-top: 32px;
+}
+
+#modal.info .content #failIcon {
+  height: 57px;
+  background: red;
+  border-radius: 8px;
+}
+
 .items-grid {
   display: -ms-grid;
   display: grid;
