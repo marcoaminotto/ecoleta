@@ -3,6 +3,7 @@ const sqlite3 = require("sqlite3").verbose();
 const db = new sqlite3.Database("./src/database/database.db");
 
 module.exports = db;
+
 // db.serialize(() => {
 //   db.run(`
 //     CREATE TABLE IF NOT EXISTS places (
@@ -10,9 +11,12 @@ module.exports = db;
 //       name TEXT,
 //       image TEXT,
 //       address TEXT,
-//       city TEXT,
-//       region TEXT,
+//       complement TEXT,
 //       country TEXT,
+//       region TEXT,
+//       city TEXT,
+//       latitude TEXT,
+//       longitude TEXT,
 //       items TEXT
 //     );
 //   `);
@@ -22,20 +26,26 @@ module.exports = db;
 //     name,
 //     image,
 //     address,
-//     city,
-//     region,
+//     complement,
 //     country,
+//     region,
+//     city,
+//     latitude,
+//     longitude,
 //     items
-//   ) VALUES (?,?,?,?,?,?,?);`;
+//   ) VALUES (?,?,?,?,?,?,?,?,?,?);`;
 
 //   const values = [
 //     "Papersider", 
 //     "https://images.unsplash.com/photo-1516992654410-9309d4587e94?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60",
 //     "Tadeusza Kościuszki",
-//     "Malbork",
-//     "Pomorskie",
+//     "12",
 //     "Poland",
-//     "Papers and Cardboards"
+//     "Pomorskie",
+//     "Malbork",
+//     "54.0370511",
+//     "19.0328097",
+//     "Lamps, Papers and Cardboards"
 //   ];
 
 //   function afterInsertData(err) {

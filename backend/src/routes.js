@@ -5,6 +5,8 @@ const apiBattuta = require("./service/api_battuta");
 
 let router = express.Router();
 
+router.use(express.urlencoded({ extended: true }));
+
 router.get("/", (req, res) => {
   const countries = apiBattuta.getCountries();
   countries.then((countries) => {
@@ -17,6 +19,49 @@ router.get("/create-point", (req, res) => {
   countries.then((countries) => {
     return res.render("create-point.html", { countries });
   });
+});
+
+router.post("/save-point", (req, res) => {
+
+  const query = `
+  INSERT INTO places (
+    name,
+    image,
+    address,
+    complement,
+    country,
+    region,
+    city,
+    latitude,
+    longitude,
+    items
+  ) VALUES (?,?,?,?,?,?,?,?,?,?);`;
+
+  const values = [
+    req.body.name,
+    req.body.image,
+    req.body.address,
+    req.body.complement,
+    req.body.country,
+    req.body.region,
+    req.body.city,
+    req.body.latitude,
+    req.body.longitude,
+    req.body.items
+  ];
+
+  function afterInsertData(err) {
+    if (err) {
+      return console.log(err);
+    }
+    console.log("Successfully created!");
+    console.log(this);
+
+    return res.render("create-point.html", { saved: true });
+  }
+
+  db.run(query, values, afterInsertData);
+
 });
 
 router.get("/search", (req, res) => {
