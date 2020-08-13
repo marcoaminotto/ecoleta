@@ -66,16 +66,33 @@ router.post("/save-point", (req, res) => {
 });
 
 router.get("/search", (req, res) => {
-  db.all(`SELECT * FROM places`, function (err, rows) {
+
+  db.all(`SELECT * FROM places WHERE city = '${req.query.city}'`, function (err, rows) {
     if (err) {
       return console.log(err);
     }
+
+    rows.forEach( data => {
+      data.country = data.country.split(" - ")[0];
+      data.items = data.items.replace(/,/g, ", ");
+      console.log(data);
+    });
 
     const total = rows.length;
     return res.render("search-point.html", {
       places: rows,
       total,
     });
+  });
+});
+
+router.get("/getCordinates/:city", (req, res) => {
+  db.all(`SELECT name, latitude, longitude FROM places WHERE city = '${req.params.city}'`, function (err, rows) {
+    if (err) {
+      return console.log(err);
+    }
+
+    return res.json(rows);
   });
 });
 
