@@ -72,6 +72,12 @@ router.get("/search", (req, res) => {
       return console.log(err);
     }
 
+    rows.forEach( data => {
+      data.country = data.country.split(" - ")[0];
+      data.items = data.items.replace(/,/g, ", ");
+      console.log(data);
+    });
+
     const total = rows.length;
     return res.render("search-point.html", {
       places: rows,
