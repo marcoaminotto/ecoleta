@@ -1,8 +1,5 @@
 let map;
-var locations = [
-  // here come a list of coordinates
-  // {lat: -31.563910, lng: 147.154312},
-];
+let locations = [];
 
 function initMap() {
   const queryString = window.location.search;
@@ -15,18 +12,43 @@ function initMap() {
     zoom: 12,
   });
 
-  var labels = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  populateLocations();
+}
 
-  var markers = locations.map(function (location, i) {
-    return new google.maps.Marker({
+function addMarker(location, name) {
+  window.setTimeout(() => {
+    const marker = new google.maps.Marker({
       position: location,
-      label: labels[i % labels.length],
+      map: map,
+      animation: google.maps.Animation.DROP
     });
-  });
+    locations.push(marker);
 
-  // Add a marker clusterer to manage the markers.
-  var markerCluster = new MarkerClusterer(map, markers, {
-    imagePath:
-      "https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m",
-  });
+    const infowindow = new google.maps.InfoWindow({
+      content: `<h3>${name}</h3>`
+    });  
+
+    marker.addListener("click", () => {
+      infowindow.open(map, marker);
+    });
+  
+  }, 600);
+}
+
+
+function populateLocations() {
+  const queryString = window.location.search;
+  const urlParams = new URLSearchParams(queryString);
+  const city = urlParams.get("city");
+
+  if (city) {
+    fetch(`/getCordinates/${city}`, { method: "get" }).then( response => {
+      response.json().then((cities) => {
+        for (const data of cities) {
+          const location = {lat: parseFloat(data.latitude), lng: parseFloat(data.longitude)};
+          addMarker(location, data.name);
+        }
+      });
+    });
+  }
 }
