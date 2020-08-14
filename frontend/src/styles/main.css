@@ -125,6 +125,11 @@ a {
   border-radius: 8px;
 }
 
+#modal .disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
 .items-grid {
   display: -ms-grid;
   display: grid;
@@ -425,6 +430,7 @@ main a strong {
   transition: 400ms;
   font-size: 16px;
   color: white;
+  cursor: pointer;
 }
 
 #modal-form button:hover {
