@@ -1,4 +1,5 @@
 const buttonSearch = document.querySelector("#page-home main a");
+const buttonModal =  document.querySelector("#modal button");
 const modal = document.querySelector("#modal");
 const close = document.querySelector("#modal .header a");
 const countrySelect = document.querySelector("select[name=country]");
@@ -14,14 +15,15 @@ buttonSearch.addEventListener("click", () => {
 });
 
 close.addEventListener("click", () => {
+  countrySelect.selectedIndex = 0;
+  resetSelects(citySelect, regionSelect);
+  disableButton(buttonModal);
   modal.classList.add("hide");
 });
 
 countrySelect.addEventListener("change", (event) => {
-  regionSelect.innerHTML = '<option value="">Select a region</option>';
-  citySelect.innerHTML = '<option value="">Select a city</option>';
-  regionSelect.disabled = true;
-  citySelect.disabled = true;
+  resetSelects(citySelect, regionSelect);
+  disableButton(buttonModal);
 
   if (event.target.value) {
     fetch(`/location/${event.target.value}`, { method: "get" }).then(
@@ -38,8 +40,8 @@ countrySelect.addEventListener("change", (event) => {
 });
 
 regionSelect.addEventListener("change", (event) => {
-  citySelect.innerHTML = '<option value="">Select a city</option>';
-  citySelect.disabled = true;
+  resetSelects(citySelect);
+  disableButton(buttonModal);
 
   const countrySelected = document.querySelector(
     "select[name=country]"
@@ -66,10 +68,35 @@ regionSelect.addEventListener("change", (event) => {
 
 citySelect.addEventListener("change", (event) => {
   if (event.target.value) {
+    enableButton(buttonModal);
     const citySelected = citiesCoordinates.find(
       (element) => element.city === event.target.value
     );
     cityLongitude.value = citySelected.longitude;
     cityLatitude.value = citySelected.latitude;
+  }else{
+    disableButton(buttonModal);
   }
 });
+
+function enableButton(button) {
+  button.disabled = false;
+  button.classList.remove("disabled");
+}
+
+function disableButton(button) {
+  button.disabled = true;
+  button.classList.add("disabled");
+}
+
+function resetSelects(city, region) {
+  if (city && region) {
+    region.innerHTML = '<option value="">Select a region</option>';
+    city.innerHTML = '<option value="">Select a city</option>';
+    region.disabled = true;
+    city.disabled = true;
+  } else if (city) {
+    city.innerHTML = '<option value="">Select a city</option>';
+    city.disabled = true;
+  }
+}
