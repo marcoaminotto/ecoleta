@@ -1,23 +1,23 @@
 // 1 - HELPERS
-@import '1-helpers/variables';
+@import "1-helpers/variables";
 
 // 2 - TOOLS
-@import '2-tools/google-maps';
+@import "2-tools/google-maps";
 
 // 3 - BASICS
-@import '3-basics/reset';
-@import '3-basics/base';
-@import '3-basics/links';
-@import '3-basics/modal';
-@import '3-basics/grid';
+@import "3-basics/reset";
+@import "3-basics/base";
+@import "3-basics/links";
+@import "3-basics/modal";
+@import "3-basics/grid";
 // 4 - LAYOUT
-@import '4-layout/header';
-@import '4-layout/main';
-@import '4-layout/form';
+@import "4-layout/header";
+@import "4-layout/main";
+@import "4-layout/form";
 
 // 5 - PAGES
-@import '5-pages/home';
-@import '5-pages/create-point';
-@import '5-pages/search-points';
+@import "5-pages/home";
+@import "5-pages/create-point";
+@import "5-pages/search-points";
 
-@import 'responsive';
+@import "responsive";

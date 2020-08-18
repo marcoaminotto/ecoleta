@@ -20,21 +20,19 @@ function addMarker(location, name) {
     const marker = new google.maps.Marker({
       position: location,
       map: map,
-      animation: google.maps.Animation.DROP
+      animation: google.maps.Animation.DROP,
     });
     locations.push(marker);
 
     const infowindow = new google.maps.InfoWindow({
-      content: `<h3>${name}</h3>`
-    });  
+      content: `<h3>${name}</h3>`,
+    });
 
     marker.addListener("click", () => {
       infowindow.open(map, marker);
     });
-  
   }, 600);
 }
-
 
 function populateLocations() {
   const queryString = window.location.search;
@@ -42,10 +40,13 @@ function populateLocations() {
   const city = urlParams.get("city");
 
   if (city) {
-    fetch(`/getCordinates/${city}`, { method: "get" }).then( response => {
+    fetch(`/getCordinates/${city}`, { method: "get" }).then((response) => {
       response.json().then((cities) => {
         for (const data of cities) {
-          const location = {lat: parseFloat(data.latitude), lng: parseFloat(data.longitude)};
+          const location = {
+            lat: parseFloat(data.latitude),
+            lng: parseFloat(data.longitude),
+          };
           addMarker(location, data.name);
         }
       });
