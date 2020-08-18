@@ -1,5 +1,5 @@
 const buttonSearch = document.querySelector("#page-home main a");
-const buttonModal =  document.querySelector("#modal button");
+const buttonModal = document.querySelector("#modal button");
 const modal = document.querySelector("#modal");
 const close = document.querySelector("#modal .header a");
 const countrySelect = document.querySelector("select[name=country]");
@@ -43,9 +43,7 @@ regionSelect.addEventListener("change", (event) => {
   resetSelects(citySelect);
   disableButton(buttonModal);
 
-  const countrySelected = document.querySelector(
-    "select[name=country]"
-  ).value;
+  const countrySelected = document.querySelector("select[name=country]").value;
 
   if (countrySelected && event.target.value) {
     fetch(`/location/${countrySelected}/${event.target.value}`, {
@@ -74,7 +72,7 @@ citySelect.addEventListener("change", (event) => {
     );
     cityLongitude.value = citySelected.longitude;
     cityLatitude.value = citySelected.latitude;
-  }else{
+  } else {
     disableButton(buttonModal);
   }
 });

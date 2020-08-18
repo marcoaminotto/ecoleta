@@ -22,7 +22,6 @@ router.get("/create-point", (req, res) => {
 });
 
 router.post("/save-point", (req, res) => {
-
   const query = `
   INSERT INTO places (
     name,
@@ -47,7 +46,7 @@ router.post("/save-point", (req, res) => {
     req.body.city,
     req.body.latitude,
     req.body.longitude,
-    req.body.items
+    req.body.items,
   ];
 
   function afterInsertData(err) {
@@ -62,20 +61,20 @@ router.post("/save-point", (req, res) => {
   }
 
   db.run(query, values, afterInsertData);
-
 });
 
 router.get("/search", (req, res) => {
-
-  db.all(`SELECT * FROM places WHERE city = '${req.query.city}'`, function (err, rows) {
+  db.all(`SELECT * FROM places WHERE city = '${req.query.city}'`, function (
+    err,
+    rows
+  ) {
     if (err) {
       return console.log(err);
     }
 
-    rows.forEach( data => {
+    rows.forEach((data) => {
       data.country = data.country.split(" - ")[0];
       data.items = data.items.replace(/,/g, ", ");
-      console.log(data);
     });
 
     const total = rows.length;
@@ -87,13 +86,16 @@ router.get("/search", (req, res) => {
 });
 
 router.get("/getCordinates/:city", (req, res) => {
-  db.all(`SELECT name, latitude, longitude FROM places WHERE city = '${req.params.city}'`, function (err, rows) {
-    if (err) {
-      return console.log(err);
-    }
+  db.all(
+    `SELECT name, latitude, longitude FROM places WHERE city = '${req.params.city}'`,
+    function (err, rows) {
+      if (err) {
+        return console.log(err);
+      }
 
-    return res.json(rows);
-  });
+      return res.json(rows);
+    }
+  );
 });
 
 router.get("/location/:countryCode", (req, res) => {

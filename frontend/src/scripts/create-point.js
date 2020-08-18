@@ -21,16 +21,14 @@ countrySelect.addEventListener("change", (event) => {
 
   if (event.target.value) {
     let countryCode = event.target.value.split(" - ")[1];
-    fetch(`/location/${countryCode}`, { method: "get" }).then(
-      (response) => {
-        response.json().then((regions) => {
-          for (const data of regions) {
-            regionSelect.innerHTML += `<option value="${data.region}">${data.region}</option>`;
-          }
-        });
-        regionSelect.disabled = false;
-      }
-    );
+    fetch(`/location/${countryCode}`, { method: "get" }).then((response) => {
+      response.json().then((regions) => {
+        for (const data of regions) {
+          regionSelect.innerHTML += `<option value="${data.region}">${data.region}</option>`;
+        }
+      });
+      regionSelect.disabled = false;
+    });
   }
 });
 
@@ -39,7 +37,9 @@ regionSelect.addEventListener("change", (event) => {
   citySelect.innerHTML = '<option value="">Select a city</option>';
   citySelect.disabled = true;
 
-  const countrySelected = document.querySelector("select[name=country]").value.split(" - ")[1];
+  const countrySelected = document
+    .querySelector("select[name=country]")
+    .value.split(" - ")[1];
   if (countrySelected && event.target.value) {
     fetch(`/location/${countrySelected}/${event.target.value}`, {
       method: "get",

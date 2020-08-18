@@ -45,7 +45,7 @@ a {
 }
 
 #modal {
-  background-color: #0E0A14da;
+  background-color: #0e0a14da;
   position: fixed;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -175,7 +175,8 @@ a {
   color: #322153;
 }
 
-.items-grid li img, .items-grid li span {
+.items-grid li img,
+.items-grid li span {
   pointer-events: none;
 }
 
@@ -339,7 +340,8 @@ main a strong {
   color: #322153;
 }
 
-#register-form input, #register-form select {
+#register-form input,
+#register-form select {
   background-color: #e7e7ec;
   padding: 16px 24px;
   border: 0;

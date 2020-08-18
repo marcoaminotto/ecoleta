@@ -24,7 +24,8 @@
       color: $title-color;
     }
 
-    img, span {
+    img,
+    span {
       pointer-events: none;
     }
 
@@ -34,5 +35,4 @@
       transition: background-color 400ms;
     }
   }
-
 }

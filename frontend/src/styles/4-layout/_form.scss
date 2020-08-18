@@ -30,7 +30,8 @@
     }
   }
 
-  input, select {
+  input,
+  select {
     background-color: $background-color;
     padding: 16px 24px;
     border: 0;
@@ -44,7 +45,7 @@
     font-size: 15px;
   }
 
-  button { 
+  button {
     background-color: $primary-color;
     width: 260px;
     height: 56px;
@@ -60,7 +61,6 @@
     &:hover {
       background-color: $primary-color-strong;
     }
-
   }
 
   .field {
@@ -72,7 +72,7 @@
 
   .field-group {
     display: flex;
-    
+
     .field + .field {
       margin-left: 24px;
     }
@@ -131,5 +131,4 @@
     flex-direction: column;
     margin-bottom: 20px;
   }
-  
 }

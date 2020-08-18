@@ -8,7 +8,7 @@
       <div class="fields-group">
         <div class="field">
           <label for="country">Country</label>
-          <select name="country" >
+          <select name="country">
             <option value="">Select a country</option>
             {% for country in countries %}
               <option value="{{country.code}}">{{country.name}}</option>
@@ -17,23 +17,23 @@
         </div>
         <div class="field">
           <label for="region">Region</label>
-          <select name="region" >
+          <select name="region">
             <option value="">Select a region</option>
           </select>
         </div>
         <div class="field">
           <label for="city">City</label>
-          <select name="city" >
+          <select name="city">
             <option value="">Select a city</option>
           </select>
         </div>
         <input type="hidden" name="latitude" value=""/>
         <input type="hidden" name="longitude" value=""/>
-        <button class = "disabled" disabled>
+        <button class="disabled" disabled="disabled">
           <img src="../assets/search.svg" alt="Search">
           <strong>Search</strong>
         </button>
       </div>
     </form>
-  </div> 
+  </div>
 </div>
