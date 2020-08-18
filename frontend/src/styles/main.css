@@ -509,13 +509,14 @@ main a strong {
 
 #page-search-points::after {
   content: "";
-  position: fixed;
-  background-color: white;
-  top: 260px;
+  position: absolute;
+  background-color: #f0f0f5;
+  top: 0;
   right: 0;
   left: 0;
   bottom: 0;
   z-index: -1;
+  height: 16rem;
 }
 
 #page-search-points header span {
