@@ -1,6 +1,20 @@
 <p align="center">
-  <img src="https://github.com/marcoaminotto/ecoleta/blob/master/frontend/src/assets/logo.svg" alt="Image of the Ecoleta application">
+  <img src="https://github.com/marcoaminotto/ecoleta/blob/master/frontend/src/assets/logo.svg" alt="Image of the Ecoleta application" width="300px">
 </p>
+
+<p align="center">	
+  <a href="https://www.linkedin.com/in/marco-echevestre/">
+      <img alt="Marco Echevestre" src="https://img.shields.io/badge/-Marco Echevestre-34cb79?style=flat&logo=Linkedin&logoColor=white" />
+  </a>
+  <img alt="Repository size" src="https://img.shields.io/github/repo-size/marcoaminotto/ecoleta?color=34cb79">
+  <img alt="Repository size" src="https://img.shields.io/github/languages/code-size/marcoaminotto/ecoleta?color=34cb79">
+  <a href="https://github.com/marcoaminotto/proffy/commits/master">
+    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/marcoaminotto/ecoleta?color=34cb79">
+  </a> 
+  <img alt="GitHub All Releases" src="https://img.shields.io/github/downloads/marcoaminotto/ecoleta/total?logo=GitHub&style=flat&color=34cb79">
+  <img alt="License" src="https://img.shields.io/badge/license-MIT-34cb79">
+</p>
+
 
 # 📖 About
 This is a project that I developed basead in the course "NWL 1.0" made by [RocketSeat](rocketseat.com.br). The website has the purpose to help the users to find and/or to register collection points near them. 
