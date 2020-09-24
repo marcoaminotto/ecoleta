@@ -49,8 +49,16 @@ To run this project, download it to your computer or use the git command `git cl
 * Open the file `src/pages/partials/scripts-map.html` and change in the link `KEY` by your Google Maps API key
 
 
-#
+# :closed_book: License
 
+Released in 2020 :closed_book: License
+
+This project is under the [MIT license](./LICENSE).
+
+
+Give a ⭐️ if this project helped you!
+
+#
 <p align="center">
    <b> &#60;/&#62; by <a href="https://www.linkedin.com/in/marco-echevestre/">Marco Echevestre</a></b>
 </p>
