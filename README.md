@@ -24,14 +24,35 @@ I used this project as an opportunity to implement more technologies and try to 
 * Use the [Battuta API](http://battuta.medunes.net/) to determine the location of a collection point, by selecting specific the country, region and city where it can be found
 * Use [SASS](https://sass-lang.com/) to write the CSS code and organize it
 
+# 📐 Layout
+
+<div align="center">
+  <p align="center">
+    <img src="./.github/main.png" width="475px">
+  </p>
+  <p align="center">
+    <img src="./.github/search-point.png" width="475px">
+  </p> 
+  <p align="center">
+    <img src="./.github/register-point.png" width="475px">
+  </p>
+</div>
+
+
 ### 🚀 Tecnologies
 * Node.js(Express) - Backend
 * [Nunjucks](https://mozilla.github.io/nunjucks/), SASS, HTML - Frontend
 * SQLite - Database
 
-# 🔧 Installation
+# 🔧 How to run
 
 To run this project, download it to your computer or use the git command `git clone`.
+
+### Frontend
+
+* Open the folder ecoleta/frontend
+* Get a key of [Google Maps API](https://developers.google.com/maps/documentation/javascript/get-api-key)
+* Open the file `src/pages/partials/scripts-map.html` and change in the link `KEY` by your Google Maps API key
 
 ### Backend
 
@@ -40,14 +61,6 @@ To run this project, download it to your computer or use the git command `git cl
 * Get a key at the website http://battuta.medunes.net/, to be able to use the Battuta API
 * Rename the file `.env.example` to `.env`, open the file and add the Battua key to the environment variable `BATTUTA_KEY`
 * Run `$ npm start` to start the backend server
-
-
-### Frontend
-
-* Open the folder ecoleta/frontend
-* Get a key of [Google Maps API](https://developers.google.com/maps/documentation/javascript/get-api-key)
-* Open the file `src/pages/partials/scripts-map.html` and change in the link `KEY` by your Google Maps API key
-
 
 # :closed_book: License
 
