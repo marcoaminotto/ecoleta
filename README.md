@@ -17,7 +17,7 @@
 
 
 # 📖 About
-This is a project that I developed basead in the course "NWL 1.0" made by [RocketSeat](rocketseat.com.br). The website has the purpose to help the users to find and/or to register collection points near them. 
+This is a project that I developed based in the course "NWL 1.0" made by [RocketSeat](rocketseat.com.br). The website has the purpose to help the users to find and/or to register collection points near them. 
 
 I used this project as an opportunity to implement more technologies and try to improve it with more funcionalities, such as:
 * Use [Google Maps API](https://developers.google.com/maps/documentation/javascript/overview) to allow the user to mark the location of the collection point when it's being registered, and show on the map all the collection points according to a determined city location
