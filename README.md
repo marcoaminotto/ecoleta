@@ -8,7 +8,7 @@
   </a>
   <img alt="Repository size" src="https://img.shields.io/github/repo-size/marcoaminotto/ecoleta?color=34cb79">
   <img alt="Repository size" src="https://img.shields.io/github/languages/code-size/marcoaminotto/ecoleta?color=34cb79">
-  <a href="https://github.com/marcoaminotto/proffy/commits/master">
+  <a href="https://github.com/marcoaminotto/ecoleta/commits/master">
     <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/marcoaminotto/ecoleta?color=34cb79">
   </a> 
   <img alt="GitHub All Releases" src="https://img.shields.io/github/downloads/marcoaminotto/ecoleta/total?logo=GitHub&style=flat&color=34cb79">
